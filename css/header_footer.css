@@ -4,9 +4,31 @@ header{
     background-color: rgb(245, 238, 238);
 }
 
+header nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav a{
+    transition: ease-in 0.4s;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(245, 238, 238);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+header nav a:hover{
+    background-color: rgb(200, 200, 200);
+}
+
 footer{
     margin: 0;
     padding: 60px;
     background-color: rgb(1, 1, 1);
     opacity: 30%;
+}
+
+#active{
+    background-color: rgb(150, 150, 150);
 }
