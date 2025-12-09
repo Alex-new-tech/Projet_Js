@@ -1,20 +1,28 @@
 header{
     margin: 0;
-    padding: 60px;
+    padding: 20px;
     background-color: rgb(245, 238, 238);
 }
 
 header nav{
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
+    align-items: center;
+    gap: 30px;
 }
 
 header nav a{
     transition: ease-in 0.4s;
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: medium;
     text-decoration: none;
     color: black;
     background-color: rgb(245, 238, 238);
-    border-radius: 10px;
+    border-radius: 25px;
     padding: 10px;
 }
 
