@@ -30,6 +30,13 @@ header nav a:hover{
     background-color: rgb(200, 200, 200);
 }
 
+header nav input{
+    margin-left: 50rem;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid rgb(200, 200, 200);
+}
+
 footer{
     margin: 0;
     padding: 60px;
