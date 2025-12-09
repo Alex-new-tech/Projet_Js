@@ -21,20 +21,17 @@ header nav a{
     font-size: medium;
     text-decoration: none;
     color: black;
+    border: solid 1px black;
     background-color: rgb(245, 238, 238);
     border-radius: 25px;
     padding: 10px;
-}
-
-header nav a:hover{
-    background-color: rgb(200, 200, 200);
 }
 
 header nav input{
     margin-left: 50rem;
     padding: 12px;
     border-radius: 15px;
-    border: 1px solid rgb(200, 200, 200);
+    border: 1px solid rgb(0, 0, 0);
 }
 
 footer{
