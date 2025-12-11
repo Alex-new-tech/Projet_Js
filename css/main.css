@@ -26,6 +26,7 @@ main section div {
     border-radius: 10px;
     width: 300px;
     height: 550px;
+    margin-top: 10px;
     text-align: center;
 }
 

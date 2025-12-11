@@ -1,4 +1,5 @@
 let nav = document.getElementsByClassName("navhover");
+const cleapi = "5e37588e";
 
 if (nav.length > 0){
     for (let i = 0; i < nav.length; i++) {
@@ -36,7 +37,7 @@ let meilleursFilms = [];
 
 async function initialiserFilms(film,premierParametre = "s=") {
     try {
-        let films = await DonneeFilms(`https://www.omdbapi.com/?apikey=5e37588e&${premierParametre}${film}`);
+        let films = await DonneeFilms(`https://www.omdbapi.com/?apikey=${cleapi}&${premierParametre}${film}`);
         films = films.Search.filter(film => film.Type === "movie");
         return films;
     }   
@@ -55,12 +56,15 @@ async function main() {
     harryPotterFilms = await initialiserFilms("Harry Potter");
     fastAndFuriousFilms = await initialiserFilms("Fast and Furious");
     missionImpossible = await initialiserFilms("Mission Impossible");
-    console.log(spiderManFilms);
-    console.log(starWarsFilms);
-    console.log(fastAndFuriousFilms);
+    console.log(batmanFilms);
+    console.log(missionImpossible);
+    console.log(harryPotterFilms);
     meilleursFilms.push (spiderManFilms.find(film => film.Title == "Spider-Man: No Way Home"));
     meilleursFilms.push (starWarsFilms.find(film => film.Title == "Rogue One: A Star Wars Story"));
     meilleursFilms.push (fastAndFuriousFilms.find(film => film.Title == "Fast and the Furious: Tokyo Drift - The Japanese Way"));
+    meilleursFilms.push (missionImpossible.find(film => film.Title == "Mission: Impossible - Ghost Protocol"));
+    meilleursFilms.push (harryPotterFilms.find(film => film.Title == "Harry Potter and the Prisoner of Azkaban"));
+    meilleursFilms.push (batmanFilms.find(film => film.Title == "The Batman"));
     console.log(meilleursFilms);
     document.dispatchEvent(new Event("films-prets"));
 }

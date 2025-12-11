@@ -1,7 +1,8 @@
 let ChargerFilms = document.getElementById("ButtonChargerFilms");
 const SectionFilmsTendances = document.getElementById("FilmsTendances");
+const SectionFilms = document.getElementById("Films");
 
-function ajoutFilmHtml(filmImage, filmTitre) {
+function ajoutFilmHtml(filmImage, filmTitre, tendances = false) {
     let div = document.createElement("div");
     div.innerHTML = `
     <div>
@@ -9,30 +10,22 @@ function ajoutFilmHtml(filmImage, filmTitre) {
         <h3>${filmTitre}</h3>
         <a href=pages/movie.html> En Savoir plus </a>
     </div>`;
-    SectionFilmsTendances.appendChild(div);
+    if (tendances) {
+        SectionFilmsTendances.appendChild(div);
+    }
+    else {
+        SectionFilms.appendChild(div);
+    }
 };
 
 document.addEventListener("films-prets", () => {
-    let filmImage = meilleursFilms[0].Poster;
-    let filmTitre = meilleursFilms[0].Title;
-    ajoutFilmHtml(filmImage, filmTitre);
+    for (i = 0; i < meilleursFilms.length; i++) {
+        ajoutFilmHtml(meilleursFilms[i].Poster, meilleursFilms[i].Title, true);
+    }
 
-    filmImage = meilleursFilms[1].Poster;
-    filmTitre = meilleursFilms[1].Title;
-    ajoutFilmHtml(filmImage, filmTitre);
-
-    filmImage = meilleursFilms[2].Poster;
-    filmTitre = meilleursFilms[2].Title;
-    ajoutFilmHtml(filmImage, filmTitre);
+    ChargerFilms.addEventListener("click", () => {
+    for (i = 0; i < 6; i++){
+        ajoutFilmHtml();
+    }
 });
-
-ChargerFilms.addEventListener("click", () => {
-    const div = document.createElement("div");
-    div.innerHTML = `
-    <div>
-        <img src=${filmImage} alt="Poster du film ${filmTitre}">
-        <h3>${filmTitre}</h3>
-        <a href=pages/movie.html> En Savoir plus </a>
-    </div>`;
-    SectionFilmsTendances.appendChild(div);
 });
