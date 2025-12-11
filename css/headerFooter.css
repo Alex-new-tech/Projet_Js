@@ -21,13 +21,18 @@ header nav a{
     font-size: medium;
     text-decoration: none;
     color: black;
+    border: solid 1px black;
     background-color: rgb(245, 238, 238);
     border-radius: 25px;
     padding: 10px;
 }
 
-header nav a:hover{
-    background-color: rgb(200, 200, 200);
+header nav input{
+    margin-left: 0.6rem;
+    padding: 12px;
+    flex: 1;
+    border-radius: 15px;
+    border: 1px solid rgb(0, 0, 0);
 }
 
 footer{
@@ -39,4 +44,21 @@ footer{
 
 #active{
     background-color: rgb(150, 150, 150);
+}
+
+@media only screen and (max-width: 400px){
+    header nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    header nav a {
+        width: 100%;
+    }
+
+    header nav input {
+        width: 100%;
+        margin-left: 0;
+    }
 }
