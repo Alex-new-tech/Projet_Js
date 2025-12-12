@@ -56,9 +56,6 @@ async function main() {
     harryPotterFilms = await initialiserFilms("Harry Potter");
     fastAndFuriousFilms = await initialiserFilms("Fast and Furious");
     missionImpossible = await initialiserFilms("Mission Impossible");
-    console.log(batmanFilms);
-    console.log(missionImpossible);
-    console.log(harryPotterFilms);
     meilleursFilms.push (spiderManFilms.find(film => film.Title == "Spider-Man: No Way Home"));
     meilleursFilms.push (starWarsFilms.find(film => film.Title == "Rogue One: A Star Wars Story"));
     meilleursFilms.push (fastAndFuriousFilms.find(film => film.Title == "Fast and the Furious: Tokyo Drift - The Japanese Way"));
