@@ -1,50 +1,34 @@
 let ChargerFilms = document.getElementById("ButtonChargerFilms");
-const SectionFilmsTendances = document.getElementById("FilmsTendances");
+let ChargerFilmsPlus = true;
+let SectionFilmsTendances;
+let i = 0
+
+main();
 
 document.addEventListener("films-prets", () => {
-    let filmImage = meilleursFilms[0].Poster;
-    let filmTitre = meilleursFilms[0].Title;
-    let filmDescription = meilleursFilms[0].Title;
-    let div = document.createElement("div");
-    div.innerHTML = `
-    <div>
-        <img src=${filmImage} alt="Poster du film ${filmTitre}">
-        <h3>${filmTitre}</h3>
-        <a href=pages/movie.html> En Savoir plus </a>
-    </div>`;
-    SectionFilmsTendances.appendChild(div);
-    filmImage = meilleursFilms[1].Poster;
-    filmTitre = meilleursFilms[1].Title;
-    filmDescription = meilleursFilms[1].Title;
-    div = document.createElement("div");
-    div.innerHTML = `
-    <div>
-        <img src=${filmImage} alt="Poster du film ${filmTitre}">
-        <h3>${filmTitre}</h3>
-        <a href=pages/movie.html> En Savoir plus </a>
-    </div>`;
-    SectionFilmsTendances.appendChild(div);
-    filmImage = meilleursFilms[2].Poster;
-    filmTitre = meilleursFilms[2].Title;
-    filmDescription = meilleursFilms[2].Title;
-    div = document.createElement("div");
-    div.innerHTML = `
-    <div>
-        <img src=${filmImage} alt="Poster du film ${filmTitre}">
-        <h3>${filmTitre}</h3>
-        <a href=pages/movie.html> En Savoir plus </a>
-    </div>`;
-    SectionFilmsTendances.appendChild(div);
-});
+    const SectionTendances = document.createElement("section");
+    SectionTendances.id = "FilmsTendances";
+    ChargerFilms.before(SectionTendances);
+    SectionFilmsTendances = SectionTendances
 
-ChargerFilms.addEventListener("click", () => {
-    const div = document.createElement("div");
-    div.innerHTML = `
-    <div>
-        <img src=${filmImage} alt="Film 3">
-        <h3>${filmTitre}</h3>
-        <p>${filmDescription}</p>
-    </div>`;
-    SectionFilmsTendances.appendChild(div);
+    for (let i = 0; i < meilleursFilms.length; i++) {
+        ajoutFilmHtml(meilleursFilms[i].Poster, meilleursFilms[i].Title, true);
+    }
+
+    ChargerFilms.addEventListener("click", () => {
+
+        if (ChargerFilmsPlus){
+            const SectionFilmsCreation = document.createElement("section");
+            SectionFilmsCreation.id = "Films";
+            ChargerFilms.before(SectionFilmsCreation);
+            ChargerFilmsPlus = false;
+        }
+
+        for (let j = i; j < i + 6 && j < toutFilms.length; j++) {
+            ajoutFilmHtml(toutFilms[j].Poster, toutFilms[j].Title);
+        }
+
+        i += 6;
+    });
 });
 
