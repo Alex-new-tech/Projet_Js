@@ -24,7 +24,6 @@ async function DonneeFilms(url) {
     }
 }
 
-
 let spiderManFilms = [];
 let avengerFilms = [];
 let marvelFilms = [];
@@ -62,7 +61,6 @@ async function main() {
     meilleursFilms.push (missionImpossible.find(film => film.Title == "Mission: Impossible - Ghost Protocol"));
     meilleursFilms.push (harryPotterFilms.find(film => film.Title == "Harry Potter and the Prisoner of Azkaban"));
     meilleursFilms.push (batmanFilms.find(film => film.Title == "The Batman"));
-    console.log(meilleursFilms);
     document.dispatchEvent(new Event("films-prets"));
 }
 
