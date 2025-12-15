@@ -13,7 +13,7 @@ if (nav.length > 0){
     }
 }
 
-function ajoutFilmHtml(filmImage, filmTitre, tendances = false) {
+function ajoutFilmHtml(filmImage, filmTitre, tendances = false, pages ="") {
     let div = document.createElement("div");
     div.classList.add("film-card");
     console.log(filmImage);
@@ -23,13 +23,13 @@ function ajoutFilmHtml(filmImage, filmTitre, tendances = false) {
                 Poster indisponible
             </div>
             <h3>${filmTitre}</h3>
-            <a href="pages/movie.html?nom=${filmTitre}">En savoir plus</a>
+            <a href="${pages}movie.html?nom=${filmTitre}">En savoir plus</a>
         `;
     } else {
         div.innerHTML = `
             <img src="${filmImage}" alt="Poster du film ${filmTitre}">
             <h3>${filmTitre}</h3>
-            <a href="pages/movie.html?nom=${filmTitre}">En savoir plus</a>
+            <a href="${pages}movie.html?nom=${filmTitre}">En savoir plus</a>
         `;
     }
     
@@ -68,7 +68,9 @@ async function initialiserFilms(film,premierParametre = "s=") {
     console.log("Initialisation des films pour le terme de recherche :", film);
     try {
         let films = await DonneeFilms(`https://www.omdbapi.com/?apikey=${cleapi}&${premierParametre}${film}`);
-        films = films.Search.filter(film => film.Type === "movie");
+        if (premierParametre === "s=") {
+            films = films.Search.filter(film => film.Type === "movie");
+        }
         return films;
     }   
     catch (error) {

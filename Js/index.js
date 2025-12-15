@@ -12,7 +12,7 @@ document.addEventListener("films-prets", () => {
     SectionFilmsTendances = SectionTendances
 
     for (let i = 0; i < meilleursFilms.length; i++) {
-        ajoutFilmHtml(meilleursFilms[i].Poster, meilleursFilms[i].Title, true);
+        ajoutFilmHtml(meilleursFilms[i].Poster, meilleursFilms[i].Title, true, "pages/");
     }
 
     ChargerFilms.addEventListener("click", () => {
@@ -25,7 +25,7 @@ document.addEventListener("films-prets", () => {
         }
 
         for (let j = i; j < i + 6 && j < toutFilms.length; j++) {
-            ajoutFilmHtml(toutFilms[j].Poster, toutFilms[j].Title);
+            ajoutFilmHtml(toutFilms[j].Poster, toutFilms[j].Title, false, "pages/");
         }
 
         i += 6;
