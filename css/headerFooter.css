@@ -40,7 +40,7 @@ footer{
     margin: 0;
     padding: 60px;
     background-color: rgb(1, 1, 1);
-    opacity: 30%;
+    opacity: 80%;
 }
 
 #active{
@@ -62,4 +62,42 @@ footer{
         width: 100%;
         margin-left: 0;
     }
+}
+
+.footer {
+    background-color: rgb(35, 35, 35);
+    color: #ccc;
+    padding: 30px 20px 15px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.footer-section {
+    max-width: 300px;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-section p {
+    margin: 4px 0;
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #afacac;
+    color: #e6e6e6;
 }
