@@ -1,5 +1,5 @@
 let nav = document.getElementsByClassName("navhover");
-const cleapi = "5e37588e";
+const cleapi = "your_api_key_here";
 
 if (nav.length > 0){
     for (let i = 0; i < nav.length; i++) {
