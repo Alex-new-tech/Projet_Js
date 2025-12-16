@@ -154,3 +154,28 @@ main section div{
         max-width: 100%;
     }
 }
+
+#ButtonChargerFilms {
+    background: linear-gradient(135deg, #ff3c3c, #ff7a18);
+    color: white;
+    border: none;
+    border-radius: 12px;        
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 60, 60, 0.35);
+}
+
+#ButtonChargerFilms:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 60, 60, 0.5);
+    filter: brightness(1.05);
+}
+
+#ButtonChargerFilms:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(255, 60, 60, 0.3);
+}

@@ -64,10 +64,10 @@ let missionImpossible = [];
 let meilleursFilms = [];
 let toutFilms = [];
 
-async function initialiserFilms(film,premierParametre = "s=") {
+async function initialiserFilms(film,premierParametre = "s=",deuxiemeParametre = "short") {
     console.log("Initialisation des films pour le terme de recherche :", film);
     try {
-        let films = await DonneeFilms(`https://www.omdbapi.com/?apikey=${cleapi}&${premierParametre}${film}`);
+        let films = await DonneeFilms(`https://www.omdbapi.com/?apikey=${cleapi}&${premierParametre}${film}&plot=${deuxiemeParametre}`);
         if (premierParametre === "s=") {
             films = films.Search.filter(film => film.Type === "movie");
         }
@@ -100,4 +100,3 @@ async function main() {
     );
     document.dispatchEvent(new Event("films-prets"));
 }
-

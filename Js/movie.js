@@ -13,7 +13,7 @@ function formatDateFR(dateUS) {
 }
 
 async function afficherFilmUnique() {
-    let filmUnique = await initialiserFilms(nom, "t=")
+    let filmUnique = await initialiserFilms(nom, "t=", "full")
     console.log(filmUnique);
     SectionUnFilm.innerHTML = `
         <div class="film-unique-card">
