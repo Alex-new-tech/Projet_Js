@@ -1,6 +1,10 @@
 let nav = document.getElementsByClassName("navhover");
 const cleapi = "Clé api OMDB ici";
 
+if (cleapi === "Clé api OMDB ici") {
+    alert("Veuillez insérer votre clé API OMDB dans le fichier Js/ForAll.js pour que l'application fonctionne correctement.");
+}
+
 if (nav.length > 0){
     for (let i = 0; i < nav.length; i++) {
         nav[i].addEventListener("pointerover", function(){

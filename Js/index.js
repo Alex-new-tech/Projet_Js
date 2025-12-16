@@ -14,7 +14,7 @@ document.addEventListener("films-prets", () => {
     for (let i = 0; i < meilleursFilms.length; i++) {
         ajoutFilmHtml(meilleursFilms[i].Poster, meilleursFilms[i].Title, true, "pages/");
     }
-
+    
     ChargerFilms.addEventListener("click", () => {
 
         if (ChargerFilmsPlus){
