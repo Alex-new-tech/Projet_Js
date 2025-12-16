@@ -1,5 +1,9 @@
 let nav = document.getElementsByClassName("navhover");
-const cleapi = "5e37588e";
+const cleapi = "Clé api OMDB ici";
+
+if (cleapi === "Clé api OMDB ici") {
+    alert("Veuillez insérer votre clé API OMDB dans le fichier Js/ForAll.js pour que l'application fonctionne correctement.");
+}
 
 if (nav.length > 0){
     for (let i = 0; i < nav.length; i++) {
@@ -13,7 +17,7 @@ if (nav.length > 0){
     }
 }
 
-function ajoutFilmHtml(filmImage, filmTitre, tendances = false) {
+function ajoutFilmHtml(filmImage, filmTitre, tendances = false, pages ="") {
     let div = document.createElement("div");
     div.classList.add("film-card");
     console.log(filmImage);
@@ -23,13 +27,13 @@ function ajoutFilmHtml(filmImage, filmTitre, tendances = false) {
                 Poster indisponible
             </div>
             <h3>${filmTitre}</h3>
-            <a href="pages/movie.html?nom=${filmTitre}">En savoir plus</a>
+            <a href="${pages}movie.html?nom=${filmTitre}">En savoir plus</a>
         `;
     } else {
         div.innerHTML = `
             <img src="${filmImage}" alt="Poster du film ${filmTitre}">
             <h3>${filmTitre}</h3>
-            <a href="pages/movie.html?nom=${filmTitre}">En savoir plus</a>
+            <a href="${pages}movie.html?nom=${filmTitre}">En savoir plus</a>
         `;
     }
     
@@ -64,11 +68,13 @@ let missionImpossible = [];
 let meilleursFilms = [];
 let toutFilms = [];
 
-async function initialiserFilms(film,premierParametre = "s=") {
+async function initialiserFilms(film,premierParametre = "s=",deuxiemeParametre = "short") {
     console.log("Initialisation des films pour le terme de recherche :", film);
     try {
-        let films = await DonneeFilms(`https://www.omdbapi.com/?apikey=${cleapi}&${premierParametre}${film}`);
-        films = films.Search.filter(film => film.Type === "movie");
+        let films = await DonneeFilms(`https://www.omdbapi.com/?apikey=${cleapi}&${premierParametre}${film}&plot=${deuxiemeParametre}`);
+        if (premierParametre === "s=") {
+            films = films.Search.filter(film => film.Type === "movie");
+        }
         return films;
     }   
     catch (error) {
@@ -98,4 +104,3 @@ async function main() {
     );
     document.dispatchEvent(new Event("films-prets"));
 }
-

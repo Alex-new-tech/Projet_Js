@@ -85,3 +85,97 @@ main section div{
 .film-card a:hover{
     background: #005ad1;
 }
+
+#FilmsUnique {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.film-unique-card {
+    background: linear-gradient(145deg, rgb(60, 60, 60), rgb(40, 40, 40));
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.film-unique-card h2 {
+    font-size: 2.5em;
+    margin: 0 0 30px 0;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.film-unique-card img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.film-unique-card img:hover {
+    transform: scale(1.05);
+}
+
+.film-unique-card p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin: 12px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border-left: 4px solid #0077ff;
+    width: 100%;
+}
+
+.film-unique-card p strong {
+    color: #0077ff;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .film-unique-card {
+        padding: 20px;
+    }
+    
+    .film-unique-card h2 {
+        font-size: 1.8em;
+    }
+    
+    .film-unique-card img {
+        max-width: 100%;
+    }
+}
+
+#ButtonChargerFilms {
+    background: linear-gradient(135deg, #ff3c3c, #ff7a18);
+    color: white;
+    border: none;
+    border-radius: 12px;        
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 60, 60, 0.35);
+}
+
+#ButtonChargerFilms:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 60, 60, 0.5);
+    filter: brightness(1.05);
+}
+
+#ButtonChargerFilms:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(255, 60, 60, 0.3);
+}
