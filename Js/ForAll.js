@@ -1,5 +1,5 @@
 let nav = document.getElementsByClassName("navhover");
-const cleapi = "your_api_key_here";
+const cleapi = "Clé api OMDB ici";
 
 if (nav.length > 0){
     for (let i = 0; i < nav.length; i++) {
